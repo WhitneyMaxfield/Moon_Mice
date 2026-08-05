@@ -25,7 +25,7 @@ library(lubridate)
 master_log <- Scoring_master_log_Master_log
 
 ###############################################################
-# SECTION A: Astronomical Variables (Moonlit)
+# SECTION A: Moonlight data (moonlit package)
 ###############################################################
 
 # Moonlit calculates the astronomical conditions present at the
@@ -77,7 +77,7 @@ moon_data <- moon_data |>
 
 master_log_moon <- bind_cols(
   master_log_moon,
-  moon_data
+  moon_dat
 )
 
 ###############################################################
