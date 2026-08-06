@@ -20,12 +20,20 @@ install.packages("moonlit")
 library(moonlit)
 library(purrr)
 library(lubridate)
+library(tidyr)
 
 # Load Master Scoring Log
 master_log <- Scoring_master_log_Master_log
 
 ###############################################################
-# SECTION A: Moonlight data (moonlit package)
+# SECTION A: Create 15-minute detection intervals 
+#idk cannot get this to work.
+#work on later 
+###############################################################
+
+
+###############################################################
+# SECTION B: Moonlight data (moonlit package)
 ###############################################################
 
 # Moonlit calculates the astronomical conditions present at the
@@ -77,11 +85,11 @@ moon_data <- moon_data |>
 
 master_log_moon <- bind_cols(
   master_log_moon,
-  moon_dat
+  moon_data
 )
 
 ###############################################################
-# SECTION B: LiDAR Canopy Structure
+# SECTION C: LiDAR Canopy Structure
 ###############################################################
 
 # LiDAR provides three-dimensional measurements of vegetation.
@@ -95,9 +103,9 @@ master_log_moon <- bind_cols(
 # Load LiDAR raster
 # Will have to change the location of the downloaded folders! Whitney can share the correct download
 # or add it to mouselab computer :) 
-dem <- rast("/Users/whitneymaxfield/Downloads/LDQ-45122D6/2014_OLC_Metro/Bare_Earth/bh45122d6")
+dem <- rast("/Users/whitneymaxfield/Desktop/Moon_data_202606/Tryon Lidar Folder/LDQ-45122D6/2014_OLC_Metro/Bare_Earth/bh45122d6")
 
-dsm <- rast("/Users/whitneymaxfield/Downloads/LDQ-45122D6/2014_OLC_Metro/Highest_Hit/hh45122d6")
+dsm <- rast("/Users/whitneymaxfield/Desktop/Moon_data_202606/Tryon Lidar Folder/LDQ-45122D6/2014_OLC_Metro/Highest_Hit/hh45122d6")
 
 # Create Canopy Height Model
 # CHM represents vegetation height above ground
@@ -132,7 +140,7 @@ bucket_sf <- buckets |>
 # Remove stations outside LiDAR coverage
 # WILL NEED TO UPDATE THIS TO FOR ALL NON TRYON LOCATIONS!!! (IE WARO, BOBS ECT)
 bucket_sf_filtered <- bucket_sf |>
-  filter(!stationID %in% c("GOME01", "GOME02"))
+  filter(!stationID %in% c("GOME01", "GOME02", "WARO"))
 
 # Create 30 m habitat buffers (can be changed)
 buffers <- st_buffer(bucket_sf_filtered, 30)
@@ -171,7 +179,7 @@ analysis_df <- master_log_moon |>
   )
 
 ###############################################################
-# SECTION C: Canopy Photographs (CoveR)
+# SECTION D: Canopy Photographs (CoveR)
 ###############################################################
 
 # Canopy photographs provide fine-scale canopy structure that
@@ -209,24 +217,20 @@ canopy_upper <- Canopy_Cover_Results |>
   )
 
 ###############################################################
-# SECTION D: Final Analysis Dataset
+# SECTION E: Final Analysis Dataset
 ###############################################################
 
 # Merge:
 #
-#   • Camera observations
-#   • Moonlit variables
-#   • LiDAR canopy metrics
-#   • CoveR canopy metrics
+# • Camera observations
+# • Moonlit variables
+# • LiDAR canopy metrics
+# • CoveR canopy metrics
 #
-# Final output:
-#
-#   master_log_lidar_canopy
-#
-# Each row represents one camera observation with both
-# observation-level (moondata) and station-level (lidar and canopy) environmental variables.
+# Remove non-Tryon sites (GOME and WARO) before exporting
 
 master_log_lidar_canopy <- analysis_df |>
+  filter(!stationID %in% c("GOME01", "GOME02", "WARO")) |>
   left_join(
     canopy_upper,
     by = c("stationID" = "Site")
@@ -237,6 +241,7 @@ write.csv(
   "LidarCanopyMoon_masterLog.csv",
   row.names = FALSE
 )
+
 ###############################################################
 # End of Pipeline
 ###############################################################
