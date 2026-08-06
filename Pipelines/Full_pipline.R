@@ -195,7 +195,7 @@ analysis_df <- master_log_moon |>
 
 # filtering for Tryon sites and Upper images ONLY 
 # select variables wanted 
-canopy_upper <- Canopy_Cover_Results |>
+canopy_upper <- Labeled_Canopy_Cover_Results |>
   filter(
     grepl("^BOHO|^SOWE", Site),
     grepl("Upper", Image)
@@ -215,6 +215,7 @@ canopy_upper <- Canopy_Cover_Results |>
 
     CI    # Clumping Index
   )
+
 
 ###############################################################
 # SECTION E: Final Analysis Dataset
