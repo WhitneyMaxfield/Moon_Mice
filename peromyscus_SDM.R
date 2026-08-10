@@ -45,16 +45,16 @@ library(dplyr)
 #==============================================================================
 
 #cleaning our data, honestly our data looked really good. This just gets rid of NAs (points with no location or only partial location) as well as some below a specific longitude (which in this case we didn’t need but I kept it in to show how you would filter those points out for example if we had a bee point in Africa which we knew was incorrect)
-trinotaus_occurence <- JumpingMouse_GBIF
-cleanzapus <- trinotaus_occurence %>% 
+Peromyscus_occurence <- DeerMouse_GBIF
+cleanper <- Peromyscus_occurence %>% 
   filter(decimalLongitude < -109) %>% 
   filter(decimalLatitude != "NA", decimalLongitude != "NA") %>% 
   mutate(location = paste(decimalLatitude, decimalLongitude, dateIdentified, sep = "/"))%>%
   distinct(location, .keep_all=TRUE)
 
-zapDataNotCoords <- cleanzapus %>% dplyr::select(decimalLongitude, decimalLatitude)
+PerDataNotCoords <- cleanper %>% dplyr::select(decimalLongitude, decimalLatitude)
 # convert to spatial points, necessary for modelling and mapping
-zapDataSpatialPts <- SpatialPoints(zapDataNotCoords , proj4string = CRS("+proj=longlat"))
+PerDataSpatialPts <- SpatialPoints(PerDataNotCoords , proj4string = CRS("+proj=longlat"))
 
 #==============================================================================
 #
@@ -92,7 +92,7 @@ climList <- list.files(path = "/Users/whitneymaxfield/Desktop/Maxent_code_practi
 clim <- raster::stack(climList)
 
 plot(clim[[12]])
-plot(zapDataSpatialPts, add=T)
+plot(PerDataSpatialPts, add=T)
 #should see a map on the right with a big mass of black points lol 
 
 #==============================================================================
@@ -107,12 +107,12 @@ mask <- raster(clim[[1]])
 # mask is the raster object that determines the area where we are generating pts
 
 # determine geographic extent of our data (so we generate random points reasonably nearby)
-geographicExtent <- extent(x = zapDataSpatialPts)
+geographicExtent <- extent(x = PerDataSpatialPts)
 
 # Random points for background (same number as our observed points we will use )
 set.seed(7536) # seed set so we get the same background points each time we run this code! 
 backgroundPoints <- randomPoints(mask = mask, 
-                                 n = nrow(zapDataNotCoords), # n should be same n as in the pts to be used to test
+                                 n = nrow(PerDataNotCoords), # n should be same n as in the pts to be used to test
                                  ext = geographicExtent, 
                                  extf = 1.25, # draw a slightly larger area than where our sp was found (ask katy what is appropriate here)
                                  warn = 0) # don't complain about not having a coordinate reference system
@@ -127,12 +127,12 @@ colnames(backgroundPoints) <- c("longitude", "latitude")
 #
 #==============================================================================
 
-zapEnv <- na.omit(raster::extract(x = clim, y = zapDataNotCoords)) 
+PerEnv <- na.omit(raster::extract(x = clim, y = PerDataNotCoords)) 
 absenceEnv<- na.omit(raster::extract(x = clim, y = backgroundPoints)) # again, many NA values
 
 # Create data frame with presence training data and backround points (0 = abs, 1 = pres)
-presenceAbsenceV <- c(rep(1, nrow(zapEnv)), rep(0, nrow(absenceEnv)))
-presenceAbsenceEnvDf <- as.data.frame(rbind(zapEnv, absenceEnv)) 
+presenceAbsenceV <- c(rep(1, nrow(PerEnv)), rep(0, nrow(absenceEnv)))
+presenceAbsenceEnvDf <- as.data.frame(rbind(PerEnv, absenceEnv)) 
 
 #==============================================================================
 #
@@ -143,7 +143,7 @@ presenceAbsenceEnvDf <- as.data.frame(rbind(zapEnv, absenceEnv))
 #bad_vars <- sapply(presenceAbsenceEnvDf, function(x) length(unique(x)) <= 1)
 #presenceAbsenceEnvDf_clean <- presenceAbsenceEnvDf[, !bad_vars]
 
-zapSDM <- maxnet(
+PerSDM <- maxnet(
   p = presenceAbsenceV,
   data = presenceAbsenceEnvDf,
   f = maxnet.formula(presenceAbsenceV, presenceAbsenceEnvDf)
@@ -174,47 +174,47 @@ plot_maxnet_responses_to_png <- function(model, data, output_dir = "maxent_outpu
 # Run it; 
 #note we had to save these plots to a folder on your computer because they are too large for R to show us!
 #to view the plot travel to the location stated after the "saved response plots to:..." text
-plot_maxnet_responses_to_png(zapSDM, presenceAbsenceEnvDf)
+plot_maxnet_responses_to_png(PerSDM, presenceAbsenceEnvDf)
 
 #==============================================================================
 #
 #                         Section 5: Plot the Model
-#   Use the SAME geographic extent as the western deer mouse SDM
+#   Define the common geographic extent for BOTH species
 #
 #==============================================================================
 
-# Use the western deer mouse prediction extent
-commonExtent <- extent(Perpredictplot)
+# Create the geographic extent based on the deer mouse occurrences
+commonExtent <- 1.25 * extent(PerDataSpatialPts)
 
-# Crop the WorldClim data to the same extent
+# Crop WorldClim to the common extent
 geographicArea <- crop(clim, commonExtent)
 
 # Make sure geographicArea is a RasterStack or RasterBrick
 class(geographicArea)
 
-# Predict jumping mouse suitability across the same area
-zappredictplot <- raster::predict(
+# Predict western deer mouse suitability
+Perpredictplot <- raster::predict(
   geographicArea,
-  model = zapSDM,
+  model = PerSDM,
   type = "cloglog"
 )
 
-# Plot the jumping mouse prediction
+# Plot the result
 plot(
-  zappredictplot,
-  main = "Jumping Mouse Maxnet Predicted Suitability"
+  Perpredictplot,
+  main = "Western Deer Mouse Maxnet Predicted Suitability"
 )
 
 # Save prediction map
 png(
-  "maxent_outputs/jumping_mouse_maxnet_prediction_map.png",
+  "maxent_outputs/peromyscus_maxnet_prediction_map.png",
   width = 800,
   height = 600
 )
 
 plot(
-  zappredictplot,
-  main = "Jumping Mouse Maxnet Predicted Suitability"
+  Perpredictplot,
+  main = "Western Deer Mouse Maxnet Predicted Suitability"
 )
 
 dev.off()
@@ -223,7 +223,7 @@ dev.off()
 #                         Smooth the prediction
 #==============================================================================
 
-r <- rast(zappredictplot)
+r <- rast(Perpredictplot)
 
 # Apply smoothing using a 3x3 mean filter
 r_smoothed <- focal(
@@ -234,9 +234,9 @@ r_smoothed <- focal(
 )
 
 # Convert to data frame for ggplot
-zapPredictDf <- as.data.frame(r_smoothed, xy = TRUE)
+PerPredictDf <- as.data.frame(r_smoothed, xy = TRUE)
 
-colnames(zapPredictDf) <- c("x", "y", "value")
+colnames(PerPredictDf) <- c("x", "y", "value")
 
 #==============================================================================
 #                         Pretty map
@@ -244,7 +244,7 @@ colnames(zapPredictDf) <- c("x", "y", "value")
 
 ggplot() +
   geom_raster(
-    data = zapPredictDf,
+    data = PerPredictDf,
     aes(x = x, y = y, fill = value)
   ) +
   geom_sf(
@@ -275,7 +275,6 @@ ggplot() +
 
 writeRaster(
   r_smoothed,
-  "jumping_mouse_maxnet_prediction_smoothedNEW.tif",
+  "deer_mouse_maxnet_prediction_smoothed_NEW.tif",
   overwrite = TRUE
 )
-
