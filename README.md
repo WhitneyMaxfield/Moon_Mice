@@ -5,7 +5,7 @@ In this project, we investigate how moonlight, habitat structure, and individual
 
 This repository documents the data, analytical workflows, and visualizations developed as part of the Moon Mice project.
 <p align="center">
-  <img src="WRM_9044.jpg" alt="Western deer mouse">
+  <img src="WRM_9044.jpg" alt="Western deer mouse" width=80%>
   <br>
   <em>Western deer mouse (<i>Peromyscus sonoriensis</i>) photographed during field research.</em>
 </p>
@@ -39,7 +39,9 @@ This project scales the study of perceived predation risk across three levels:
 
 ### Data & analysis
 <p align="center">
-  <img src="DSCF0194.JPG" alt="Camera trap photo" width="100%">
+  <img src="DSCF0194.JPG" alt="Camera trap photo" width="80%">
+<br>
+  <em>Western deer mouse (<i>Peromyscus sonoriensis</i>) captured on a trail camera visiting one of our bucket traps.</em>
 </p>
 
 The project combines **continuous camera trapping, lunar illumination estimates, habitat measurements, and individual-based observations**. Camera detections are aggregated into 15-minute intervals, allowing activity to be examined at a fine temporal scale across lunar cycles.
