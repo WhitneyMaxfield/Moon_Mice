@@ -1,5 +1,10 @@
 # Moon Mice Project 
-## The Burkhard lab, Lewis and Clark College 
+Moon Mice is a wildlife ecology research project based in the Burkhard Lab at Lewis & Clark College in Portland, Oregon. Our team studies how animals perceive and respond to environmental variation, with a particular interest in the behavioral and ecological mechanisms that shape habitat use and perceived predation risk.
+
+In this project, we investigate how moonlight, habitat structure, and individual behavior influence activity patterns in wild Western deer mice (Peromyscus sonoriensis). By combining camera trapping, environmental data, behavioral observations, and quantitative modeling, we aim to understand how landscapes of fear change across space and time—and whether individual mice experience these landscapes differently.
+
+This repository documents the data, analytical workflows, and visualizations developed as part of the Moon Mice project.
+
 <p align="center">
   <img src="WRM_9044.jpg" alt="Moon Mice project banner" width="100%">
 </p>
