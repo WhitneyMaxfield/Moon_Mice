@@ -3,6 +3,7 @@
 <p align="center">
   <img src="WRM_9044.jpg" alt="Moon Mice project banner" width="100%">
 </p>
+
 ## How does moonlight shape the behavior of nocturnal rodents?
 
 For small nocturnal mammals, leaving a refuge to forage, move, or find mates comes with a tradeoff: gaining resources while avoiding predators. Because predators are encountered relatively infrequently, animals often respond not to actual predation events, but to environmental cues that signal when and where they may be most vulnerable. This creates a **landscape of fear**—a dynamic pattern of perceived predation risk across space and time.
@@ -53,3 +54,6 @@ The broader project asks three questions:
 3. **Do individual mice differ consistently in their responses to perceived predation risk?**
 
 Together, these analyses aim to move beyond asking whether mice are simply "afraid" of moonlight and instead examine **when, where, and for whom moonlight changes the perceived risk of being active**.
+
+### Animal Handling & Photography
+All photographs of live animals included in this repository were collected as part of approved research activities and were taken using appropriate animal-handling procedures. Animals were handled by trained personnel, and photography was conducted in a manner intended to minimize disturbance and stress.
