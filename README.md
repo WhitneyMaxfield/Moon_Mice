@@ -4,9 +4,10 @@ Moon Mice is a wildlife ecology research project based in the Burkhard Lab at Le
 In this project, we investigate how moonlight, habitat structure, and individual behavior influence activity patterns in wild Western deer mice (***Peromyscus sonoriensis***). By combining camera trapping, environmental data, behavioral observations, and quantitative modeling, we aim to understand how landscapes of fear change across space and time—and whether individual mice experience these landscapes differently.
 
 This repository documents the data, analytical workflows, and visualizations developed as part of the Moon Mice project.
-
 <p align="center">
-  <img src="WRM_9044.jpg" alt="Moon Mice project banner" width="100%">
+  <img src="WRM_9044.jpg" alt="Western deer mouse">
+  <br>
+  <em>Western deer mouse (<i>Peromyscus sonoriensis</i>) photographed during field research.</em>
 </p>
 
 ## How does moonlight shape the behavior of nocturnal rodents?
