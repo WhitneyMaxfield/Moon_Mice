@@ -1,6 +1,8 @@
 # Moon Mice Project 
 ## The Burkhard lab, Lewis and Clark College 
-
+<p align="center">
+  <img src="images/WRM_9044.jpg" alt="Moon Mice project banner" width="100%">
+</p>
 ## How does moonlight shape the behavior of nocturnal rodents?
 
 For small nocturnal mammals, leaving a refuge to forage, move, or find mates comes with a tradeoff: gaining resources while avoiding predators. Because predators are encountered relatively infrequently, animals often respond not to actual predation events, but to environmental cues that signal when and where they may be most vulnerable. This creates a **landscape of fear**—a dynamic pattern of perceived predation risk across space and time.
