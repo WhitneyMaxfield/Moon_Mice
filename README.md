@@ -32,6 +32,9 @@ This project scales the study of perceived predation risk across three levels:
    We ultimately ask whether individual mice consistently differ in their responses to moonlight and habitat structure, and whether behavioral traits such as risk tolerance help explain these differences.
 
 ### Data & analysis
+<p align="center">
+  <img src="DSCF0194.JPG" alt="Camera trap photo" width="100%">
+</p>
 
 The project combines **continuous camera trapping, lunar illumination estimates, habitat measurements, and individual-based observations**. Camera detections are aggregated into 15-minute intervals, allowing activity to be examined at a fine temporal scale across lunar cycles.
 
