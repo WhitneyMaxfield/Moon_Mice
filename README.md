@@ -1,7 +1,7 @@
 # Moon Mice Project 
 ## The Burkhard lab, Lewis and Clark College 
 <p align="center">
-  <img src="images/WRM_9044.jpg" alt="Moon Mice project banner" width="100%">
+  <img src="WRM_9044.jpg" alt="Moon Mice project banner" width="100%">
 </p>
 ## How does moonlight shape the behavior of nocturnal rodents?
 
