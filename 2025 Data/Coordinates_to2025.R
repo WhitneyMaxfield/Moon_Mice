@@ -1,8 +1,9 @@
 # Old data
 old_data <- X2025_LidarCanopyMoon_masterLog
 
-# New data
-new_data <- Tracy_Data
+# New data — remove Bucket 11
+new_data <- Tracy_Data |>
+  filter(!grepl("^BKT11", BKTID_ROW))
 
 # Make a BKTID_ROW -> coordinate lookup
 coordinates <- old_data |>
@@ -22,6 +23,7 @@ new_data_with_coords <- new_data |>
 
 write.csv(
   new_data_with_coords,
-  "2025_FullSheet_with_coords",
+  "2025_FullSheet_with_coords.csv",
   row.names = FALSE
 )
+
