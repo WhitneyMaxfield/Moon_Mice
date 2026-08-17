@@ -5,7 +5,7 @@ In this project, we investigate how moonlight, habitat structure, and individual
 
 This repository documents the data, analytical workflows, and visualizations developed as part of the Moon Mice project.
 <p align="center">
-  <img src="WRM_9044.jpg" alt="Western deer mouse" width=80%>
+  <img src="Images/WRM_9044.jpg" alt="Western deer mouse" width=80%>
   <br>
   <em>Western deer mouse (<i>Peromyscus sonoriensis</i>) photographed during field research.</em>
 </p>
