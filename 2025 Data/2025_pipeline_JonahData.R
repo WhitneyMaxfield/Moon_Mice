@@ -34,7 +34,9 @@ library(tidyr)
 # Change this name if your new spreadsheet has a different
 # object name in R.
 
-master_2025_log <- new_data_with_coords
+master_2025_log <- read.csv(
+  "/Users/whitneymaxfield/Desktop/Moon_data_202606/Moon_Mice/2025 Data/USE THESE!/2025_FullSheet_with_coords.csv"
+)
 
 
 ###############################################################
