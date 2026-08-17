@@ -39,7 +39,7 @@ This project scales the study of perceived predation risk across three levels:
 
 ### Data & analysis
 <p align="center">
-  <img src="DSCF0194.JPG" alt="Camera trap photo" width="80%">
+  <img src="Images/DSCF0194.JPG" alt="Camera trap photo" width="80%">
 <br>
   <em>Western deer mouse (<i>Peromyscus sonoriensis</i>) captured on a trail camera visiting one of our bucket traps.</em>
 </p>
