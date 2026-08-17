@@ -231,7 +231,7 @@ canopy_upper <- read.csv("/Users/whitneymaxfield/Desktop/Moon_data_202606/Moon_M
 # Remove non-Tryon sites (GOME and WARO) before exporting
 
 master_log_lidar_canopy <- analysis_df |>
-  filter(!stationID %in% c("GOME01", "GOME02", "WARO")) |>
+  filter(Site == "Tryon") |>
   left_join(
     canopy_upper,
     by = c("stationID" = "Site")
