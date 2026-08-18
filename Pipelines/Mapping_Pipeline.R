@@ -73,7 +73,7 @@ chm_tryon <- crop(
   chm,
   tryon_extent
 )
-
+plot(chm_tryon)
 
 # =============================================================
 # 4. CREATE LIDAR PREDICTOR RASTERS

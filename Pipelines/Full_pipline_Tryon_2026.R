@@ -29,13 +29,14 @@ library(tidyr)
 
 # Load Master Scoring Log
 master_log <- read.csv("/Users/whitneymaxfield/Desktop/Moon_data_202606/Moon_Mice/2026 Data/Scoring_master log - Master_log copy.csv")
+head(master_log)
+names(master_log)
 
 ###############################################################
 # SECTION A: Create 15-minute detection intervals 
 #idk cannot get this to work.
 #work on later 
 ###############################################################
-
 
 ###############################################################
 # SECTION B: Moonlight data (moonlit package)
@@ -63,6 +64,9 @@ master_log_moon <- master_log |>
     )
   )
 
+#check
+class(master_log_moon$time_stamp)
+
 ###### Calculate moonlight intensity ###### 
 #using e=0.28 which is at sea level (most tryon sites sit at ~50m above sea level
 # map_dfr() used because calculateMoonlightIntensity() expects scalar inputs,
@@ -75,7 +79,7 @@ moon_data <- map_dfr(
       e = 0.28
     )
 )
-
+moon_data
 #selecting output columns we want
 moon_data <- moon_data |>
   select(
@@ -114,8 +118,8 @@ dsm <- rast("/Users/whitneymaxfield/Desktop/Moon_data_202606/Tryon Lidar Folder/
 
 # Create Canopy Height Model
 # CHM represents vegetation height above ground
-# DSM = top of vegetation
-# DEM = ground surface
+# DSM = top of vegetation (digital surface model)
+# DEM = ground surface (digital elevation model)
 # CHM = DSM - DEM
 chm <- dsm - dem
 
@@ -134,6 +138,7 @@ buckets <- master_log |>
     latitude = first(latitude),
     longitude = first(longitude)
   )
+
 # Convert to an sf object using latitude/longitude coordinates
 bucket_sf <- buckets |>
   st_as_sf(
