@@ -1,0 +1,1177 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin/>
+                <pubdate>20100801</pubdate>
+                <title>Trails</title>
+                <geoform>vector digital data</geoform>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>Regional Trails data set created by combining 31 different data sets and verified with orthophotography where applicable. Date of last data update: 2026-02-03 This is official RLIS data. Contact Person: Alicia Wood alicia.wood@oregonmetro.gov 503-813-7561 RLIS Metadata Viewer: https://gis.oregonmetro.gov/rlis-metadata/#/details/2404 RLIS Terms of Use: https://rlisdiscovery.oregonmetro.gov/pages/terms-of-use</abstract>
+            <purpose>Regional Trails to be published quarterly for RLIS Lite and provide trail information for various needs. This data set was created specifically for off-road trails and paths, though there are some regional connections that are on-street.</purpose>
+            <supplinf>The schema was created by following the National Recreation &amp; Park Association (NRPA) GIS Model for trails to set a standard among data providers. The default symbology present in the ArcGIS Online service is broken out into existing regional trails, planned regional trails, conceptual regional trails, and non-regional existing trails. Some additional planned &amp; conceptual non-regional trails as well as decommissioned trails are available in the dataset but removed from the default symbology. </supplinf>
+        </descript>
+        <timeperd>
+            <timeinfo>
+                <sngdate>
+                    <caldate>20260203</caldate>
+                </sngdate>
+            </timeinfo>
+            <current>Ground condition</current>
+        </timeperd>
+        <status>
+            <progress>Complete</progress>
+            <update>Continually</update>
+        </status>
+        <spdom>
+            <bounding>
+                <westbc>-123.486073179</westbc>
+                <eastbc>-121.651005666</eastbc>
+                <northbc>45.4616758499</northbc>
+                <southbc>44.885714569</southbc>
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>Trails</themekey>
+                <themekey>Pathways</themekey>
+                <themekey>Paths</themekey>
+                <themekey>Pedestrian</themekey>
+                <themekey>Walkways</themekey>
+            </theme>
+            <theme>
+                <themekt>ISO 19115 Topic Categories</themekt>
+                <themekey>transportation</themekey>
+            </theme>
+            <place>
+                <placekt>None</placekt>
+                <placekey>Portland</placekey>
+                <placekey>Multnomah County</placekey>
+                <placekey>Washington County</placekey>
+                <placekey>Clackamas County</placekey>
+                <placekey>Oregon</placekey>
+            </place>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst>This database and GIS data are made available under the RLIS Open Database End User License Agreement. See https://rlisdiscovery.oregonmetro.gov/pages/open-database-license.</useconst>
+        <browse>
+            <browsen>http://library.oregonmetro.gov/rlisdiscovery/browse_graphic/trails.png</browsen>
+            <browsed>Regional Trail linework in solid and dashed lines with streets and rivers for reference.</browsed>
+            <browset>PNG</browset>
+        </browse>
+    </idinfo>
+    <dataqual>
+        <posacc>
+            <horizpa>
+                <horizpar>Registered to tax lots. Street center lines were digitized from aerial orthophotography at +/- 10 feet accuracy. Tax lots were fit to the street centerlines. Beaverton, Oregon City and Tigard planning areas were improved to +/- 5 feet accuracy. Multnomah County was created with coordinate geometry using better control.</horizpar>
+            </horizpa>
+        </posacc>
+        <lineage>
+            <procstep>
+                <procdesc>Existing Trails:  31 Data sources provided a base to begin verifying alignment with aerial orthophotography.  Attribute data was populated from these source layers.  Where there was no attribute data provided, there was thorough research conducted to try and populate the records.  Unknown values were used when there was no other information available.</procdesc>
+                <procdate>20100801</procdate>
+            </procstep>
+            <procstep>
+                <procdesc>Future Trails Added:  The old RLIS regional planned trails data was incorporated into the new NRPA GIS database.  Now all of the trails are maintained in the same database.</procdesc>
+                <procdate>20110201</procdate>
+            </procstep>
+            <procstep>
+                <procdesc>TRAILID field changed from a string to an interger and re-populated in increments of one.</procdesc>
+                <procdate>20140801</procdate>
+            </procstep>
+            <procstep>
+                <procdesc>Added field MTSCOTTLP:  Field to flag if a segment is part of the Mount Scott Loop.</procdesc>
+                <procdate>20150331</procdate>
+            </procstep>
+            <procstep>
+                <procdesc>LAST_EDIT field has now been included in the data set.  This field will provide a timestamp of when a segment was last edited.</procdesc>
+                <procdate>20150507</procdate>
+            </procstep>
+        </lineage>
+    </dataqual>
+    <spdoinfo>
+        <direct>Vector</direct>
+        <ptvctinf>
+            <sdtsterm>
+                <sdtstype/>
+            </sdtsterm>
+        </ptvctinf>
+    </spdoinfo>
+    <eainfo>
+        <detailed>
+            <enttyp>
+                <enttypl>Trails.dbf</enttypl>
+                <enttypd>Attributes and descriptions associated with trails</enttypd>
+            </enttyp>
+            <attr>
+                <attrlabl>TRAILID</attrlabl>
+                <attrdef>Trail ID - Unique identification number for each trail segment.</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>TRAILNAME</attrlabl>
+                <attrdef>Trail Name - Proper name of the trail or trail segment. No abbreviations. Access, connector, and spur trail names should use the same name as the main trail, appended with the appropriate suffix, e.g., Springwater Corridor - connector. Adjacent street names may be used for trail segments in road rights-of-way.</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>SYSTEMNAME</attrlabl>
+                <attrdef>System Name - Name of the regional trail if the segment is part of the regional trails and greenways system plan.</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>SHAREDNAME</attrlabl>
+                <attrdef>Shared Name - Other name that the trail or trail segment is know by when the trail/segment is part of more than one route</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>SYSTEMTYPE</attrlabl>
+                <attrdef>Functional Class - Hierarchical classification by purpose and function.  This is analogous to a roadway classification system (interstate highways, arterials, collectors, local streets).</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Local</edomv>
+                                                						
+                        
+                        <edomvd>Sometimes called Local Access Trails or Neighborhood Trails, these provide connections to local features such as parks, community centers, and schools, and include most paths within parks, natural areas, planned developments, and campuses, as well as public stairways, alleys, and narrow ROWs.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Community</edomv>
+                                                						
+                        
+                        <edomvd>Also known as Community Connector Trails, these are typically much longer than Local trails though not as long as Regional trails. Community Trails link important land uses and areas of interest within a single jurisdiction. Examples are Tigard's Pathfinder-Genesis Trail, Portland's Columbia Blvd Trail, or Gresham's Butler Creek Greenway.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Regional</edomv>
+                                                						
+                        
+                        <edomvd>Regional trails tend to be multi-jurisdictional, exceptionally long, and connect to regionally significant features such as Forest Park or the Tualatin River. Examples are the Gresham-Fairview Trail, Hillsdale to Lake Oswego Trail, or the Wildwood Trail.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>State</edomv>
+                                                						
+                        
+                        <edomvd>Also known as Inter-regional Trails, State trails connect to destinations outside the region, e.g., Banks-Vernonia Trail or Willamette River Water Trail.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>National</edomv>
+                                                						
+                        
+                        <edomvd>Inter-state trails, e.g. Pacific Crest Trail or Columbia River Water Trail.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Other</edomv>
+                                                						
+                        
+                        <edomvd>The Other value is reserved for GIS trail features that do not exist on the ground but serve to connect trail segments to the GIS routable streets network.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>STATUS</attrlabl>
+                <attrdef>Status - Current physical state of the trail</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Conceptual</edomv>
+                                                						
+                        
+                        <edomvd>The alignment of the trail has not been determined through a master plan or schematic design process.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Decommissioned</edomv>
+                                                						
+                        
+                        <edomvd>Trail has been removed from service</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Open</edomv>
+                                                						
+                        
+                        <edomvd>Trail is open to the public, free of charge</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Open_Fee</edomv>
+                                                						
+                        
+                        <edomvd>Trail is open to the public, access fee is charged</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Planned</edomv>
+                                                						
+                        
+                        <edomvd>The alignment of the trail has been determined and adopted through a master plan process.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Restricted_Private</edomv>
+                                                						
+                        
+                        <edomvd>Trail exists but is privately owned and may not be open to the public</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Unknown</edomv>
+                                                						
+                        
+                        <edomvd>Status of the trail unknown</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Under Construction</edomv>
+                                                						
+                        
+                        <edomvd>Trail is currently under construction.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>TRLSURFACE</attrlabl>
+                <attrdef>Trail Surface - The predominant surface type the user would expect to encounter on the trail</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Chunk Wood</edomv>
+                                                						
+                        
+                        <edomvd>Shredded/chipped wood or bark</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Decking</edomv>
+                                                						
+                        
+                        <edomvd>Boardwalks, recycled material, etc.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Hard Surface</edomv>
+                                                						
+                        
+                        <edomvd>Asphalt, concrete, or similar</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Imported Material</edomv>
+                                                						
+                        
+                        <edomvd>Imported aggregates, clay, gravel, crushed rock, shell, sand, etc</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Native Material</edomv>
+                                                						
+                        
+                        <edomvd>Existing earth</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Stairs</edomv>
+                                                						
+                        
+                        <edomvd>Stairs or steps.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Water</edomv>
+                                                						
+                        
+                        <edomvd>Water</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Unknown</edomv>
+                                                						
+                        
+                        <edomvd>Unknown</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>WIDTH</attrlabl>
+                <attrdef>Width - Average width range (e.g. 1-4, 5-9) of the trail or segment in feet. Does not include the trail shoulder. Future trails have null value.</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>1-5 feet</edomv>
+                                                						
+                        
+                        <edomvd>Width of trail is 1-5 feet</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>6-9 feet</edomv>
+                                                						
+                        
+                        <edomvd>Width of trail is 6-9 feet</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>10-14 feet</edomv>
+                                                						
+                        
+                        <edomvd>Width of trail is 10-14 feet</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Unknown</edomv>
+                                                						
+                        
+                        <edomvd>Width of trail is unknown</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>15+ feet</edomv>
+                                                						
+                        
+                        <edomvd>Width of trail is 15 feet or greater</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>ACCESSIBLE</attrlabl>
+                <attrdef>Accessibility Status - Accessibility guideline compliance status for trail or segment that are designed for pedestrian use</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Accessible</edomv>
+                                                						
+                        
+                        <edomvd>Trail meets current accessibility guidelines (ADA and Access Board Interpretation/Guidelines)</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Not Accessible</edomv>
+                                                						
+                        
+                        <edomvd>Trail does not meet accessibility guidelines</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Not Evaluated</edomv>
+                                                						
+                        
+                        <edomvd>Trail not evaluated for accessibility</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>HIKE</attrlabl>
+                <attrdef>Mode: Pedestrian - Hiking, walking, running modes of travel are permitted and appropriate considering the design, character and management of the trail segment</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>N/A</edomv>
+                                                						
+                        
+                        <edomvd>Not designed for pedestrian use</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>No</edomv>
+                                                						
+                        
+                        <edomvd>Not permitted</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Yes</edomv>
+                                                						
+                        
+                        <edomvd>Permitted</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>UKN</edomv>
+                                                						
+                        
+                        <edomvd>Unknown</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>ROADBIKE</attrlabl>
+                <attrdef>Mode: Road Bike - Bicycling modes of travel are permitted and appropriate considering the design, character and management of the trail segment. (Could include electric bike or Segway type transport)</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>N/A</edomv>
+                                                						
+                        
+                        <edomvd>Not designed for road bikes, i.e., not paved.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>No</edomv>
+                                                						
+                        
+                        <edomvd>Not appropriate</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Yes</edomv>
+                                                						
+                        
+                        <edomvd>Appropriate</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>UKN</edomv>
+                                                						
+                        
+                        <edomvd>Unknown</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>MTNBIKE</attrlabl>
+                <attrdef>Mode: Mountain Bike - Mountain bicycle modes of travel are permitted and appropriate considering the design, character and management of the trail segment</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>N/A</edomv>
+                                                						
+                        
+                        <edomvd>Not designed for mountain bikes, i.e., paved.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>No</edomv>
+                                                						
+                        
+                        <edomvd>Not appropriate</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Yes</edomv>
+                                                						
+                        
+                        <edomvd>Appropriate</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>UKN</edomv>
+                                                						
+                        
+                        <edomvd>Unknown</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>EQUESTRIAN</attrlabl>
+                <attrdef>Mode: Equestrian - Equestrian, pack &amp; saddle modes of travel are permitted and appropriate considering the design, character and management of the trail segment</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>N/A</edomv>
+                                                						
+                        
+                        <edomvd>Not designed for horses, i.e., paved and/or too narrow.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>No</edomv>
+                                                						
+                        
+                        <edomvd>Not permitted</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Yes</edomv>
+                                                						
+                        
+                        <edomvd>Permitted</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>UKN</edomv>
+                                                						
+                        
+                        <edomvd>Unknown</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>WCRAFT_NON</attrlabl>
+                <attrdef>Mode: Non-motorized Watercraft - Non-motorized watercraft are permitted and appropriate considering the design, character and management of the trail segment</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>N/A</edomv>
+                                                						
+                        
+                        <edomvd>Not designed for watercraft use.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>No</edomv>
+                                                						
+                        
+                        <edomvd>Not permitted</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Yes</edomv>
+                                                						
+                        
+                        <edomvd>Permitted</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>ONSTRBIKE</attrlabl>
+                <attrdef>On-Street Bike - Designed to indicate if a bike use trail follows the path of a street or is one on the street.</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>N/A</edomv>
+                                                						
+                        
+                        <edomvd>Mode: Road Bike equals N/A or No. Includes segments that are not designed for or do not allow bikes.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>No</edomv>
+                                                						
+                        
+                        <edomvd>Bikes use a separated facility, either within road right of way, or in separate right of way. This includes two-way paths at least 8 feet wide running parallel to streets in the same right of way, a.k.a., sidepaths. Separation between bikes and car travel lanes should include grade separation, such as curbs, and a planting strip.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Yes</edomv>
+                                                						
+                        
+                        <edomvd>Bikes share the street or road with cars. Not limited to public right-of-way. This could include several facility types, including bike lanes, bike boulevards, shared roadways, sharrows, signed connections, or cycletracks. Does not include sidewalks or sidepaths that are shared with pedestrians.</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>AGENCYNAME</attrlabl>
+                <attrdef>Managing Agency - Organization with legal right to control or regulate the access to and use of the trail</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>AGENCYTYPE</attrlabl>
+                <attrdef>Agency Type - Type of managing organization</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>County</edomv>
+                                                						
+                        
+                        <edomvd>Managed by county government or agency</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Federal</edomv>
+                                                						
+                        
+                        <edomvd>Managed by federal government or agency</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Municipal</edomv>
+                                                						
+                        
+                        <edomvd>Managed by municipal government or agency</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Park District</edomv>
+                                                						
+                        
+                        <edomvd>Managed by a special park district, e.g., THPRD</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Private - HOA</edomv>
+                                                						
+                        
+                        <edomvd>Managed by a private home owner association</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Private - NP</edomv>
+                                                						
+                        
+                        <edomvd>Trail managed by private non-profit organization, for example a land trust, conservancy, etc</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Private - other</edomv>
+                                                						
+                        
+                        <edomvd>Managed by a private individual, business or commercial entity</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>School District</edomv>
+                                                						
+                        
+                        <edomvd>Managed by a school district</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Special District</edomv>
+                                                						
+                        
+                        <edomvd>Managed by a special district government, e.g., Metro, Clean Water Services</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>State</edomv>
+                                                						
+                        
+                        <edomvd>Managed by state government or agency</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <edom>
+                                                						
+                        
+                        <edomv>Unknown</edomv>
+                                                						
+                        
+                        <edomvd>Managing agency unknown</edomvd>
+                                                					
+                    
+                    </edom>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>MILEAGE</attrlabl>
+                <attrdef>Length of segment in miles.</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>REGPLAN</attrlabl>
+                <attrdef>Flag to indicate if the segment is part of a regional trail system.</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>WILRIVGNWY</attrlabl>
+                <attrdef>Flag to indicate if segment is part of the Willamette River Greenway.</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>LAST_EDIT</attrlabl>
+                <attrdef>Date of the last time the feature has been edited, including attribute or geometry changes.</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+            <attr>
+                <attrlabl>FORTYMLOOP</attrlabl>
+                <attrdef>Flag to indicate if the segment is part of the 40-mile loop</attrdef>
+                <attrdomv>
+                                        					
+                    
+                    <udom>NA</udom>
+                                        				
+                
+                </attrdomv>
+            </attr>
+        </detailed>
+    </eainfo>
+    <distinfo>
+        <distrib>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Metro Data Resource Center</cntorg>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>unknown</addrtype>
+                    <address>600 NE Grand Ave.</address>
+                    <city>Portland</city>
+                    <state>OR</state>
+                    <postal>97232</postal>
+                </cntaddr>
+                <cntvoice>503 797-1742</cntvoice>
+                <cntfax>503 797-1909</cntfax>
+                <cntemail>drc@oregonmetro.gov</cntemail>
+            </cntinfo>
+        </distrib>
+        <resdesc>Email drc@oregonmetro.gov or call 503-797-1742 for further instructions.</resdesc>
+        <distliab>The information in this file was derived from digital databases on Metro's GIS. Care was taken in the creation of this file. Metro cannot accept any responsibility for errors, omissions, or positional accuracy. There are no warranties, expressed or implied.</distliab>
+        <stdorder>
+            <digform>
+                <digtinfo>
+                    <formname>Shapefile</formname>
+                    <transize>6</transize>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>http://www.oregonmetro.gov/rlisdiscovery</networkr>
+                            </networka>
+                        </computer>
+                        <accinstr>Email drc@oregonmetro.gov or call 503-797-1742 for further instructions.</accinstr>
+                    </onlinopt>
+                    <offoptn>
+                        <offmedia/>
+                        <recfmt>ISO 9660</recfmt>
+                    </offoptn>
+                </digtopt>
+            </digform>
+            <fees>No cost</fees>
+        </stdorder>
+    </distinfo>
+    <metainfo>
+        <metd>20260203</metd>
+        <metc>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>Metro Data Resource Center</cntorg>
+                    <cntper>Alicia Wood</cntper>
+                </cntorgp>
+                <cntaddr>
+                    <addrtype>mailing and physical</addrtype>
+                    <address>600 NE Grand Ave.</address>
+                    <city>Portland</city>
+                    <state>OR</state>
+                    <postal>97232</postal>
+                </cntaddr>
+                <cntvoice>503-813-7561</cntvoice>
+                <cntfax>503-797-1909</cntfax>
+                <cntemail>alicia.wood@oregonmetro.gov</cntemail>
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>
