@@ -3,6 +3,7 @@ library(tidyverse)
 #okay this is just looking at positive PESO so from what I understand 
 #basicaly answering "Where do my detections occur along the moonlight gradient?" 
 #BOHO01 (just change stationID)
+data <- read.csv("")
 data %>%
   filter(
     stationID =="BOHO04",
