@@ -28,7 +28,7 @@ library(lubridate)
 library(tidyr)
 
 # Load Master Scoring Log
-master_log <- read.csv("/Users/whitneymaxfield/Desktop/Moon_data_202606/Moon_Mice/2026 Data/Scoring_master log - Master_log copy.csv")
+master_log <- read.csv("/Users/whitneymaxfield/Desktop/Moon_data_202606/Moon_Mice/2026 Data/MasterLog_20260911.csv")
 head(master_log)
 names(master_log)
 
@@ -80,6 +80,8 @@ moon_data <- map_dfr(
     )
 )
 moon_data
+head(moon_data)
+names(moon_data)
 #selecting output columns we want
 moon_data <- moon_data |>
   select(
@@ -96,7 +98,8 @@ master_log_moon <- bind_cols(
   master_log_moon,
   moon_data
 )
-
+head(master_log_moon)
+names(master_log_moon)
 ###############################################################
 # SECTION C: LiDAR Canopy Structure
 ###############################################################
@@ -132,7 +135,7 @@ chm[chm < 0] <- 0
 # The master log contains many observations for each station.
 # But we only need one location per station for extracting habitat variables! 
 buckets <- master_log |>
-  filter(Site == "Tryon") |>
+  filter(park == "Tryon") |>
   group_by(stationID) |>
   summarise(
     latitude = first(latitude),
@@ -236,15 +239,16 @@ canopy_upper <- read.csv("/Users/whitneymaxfield/Desktop/Moon_data_202606/Moon_M
 # Remove non-Tryon sites (GOME and WARO) before exporting
 
 master_log_lidar_canopy <- analysis_df |>
-  filter(Site == "Tryon") |>
+  filter(park == "Tryon") |>
   left_join(
     canopy_upper,
     by = c("stationID" = "Site")
   )
+names(master_log_lidar_canopy)
 
 write.csv(
   master_log_lidar_canopy,
-  "LidarCanopyMoon_masterLog.csv",
+  "LidarCanopyMoon_masterLog_20260911.csv",
   row.names = FALSE
 )
 
